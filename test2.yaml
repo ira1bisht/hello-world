@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   # Change the name according to your need. A good name is descriptive and should tells information about what kind of experiment the pod will be used for. 
-  name: name_of_the_pod
+  name: test2
 spec:
   securityContext:
     # Replace NUMBER with the user id provided by the administrator
-    runAsUser: NUMBER
-    fsGroup: NUMBER
+    runAsUser: 4038
+    fsGroup: 4038
   containers:
     # name of the container running inside the pod. No need to update this
     - name: tf-container
@@ -16,9 +16,9 @@ spec:
       # iitg_kubernetes:p2_master_image_latest is the name of the image where several Machine Learning related python 2 packages are already installed.
       image: abhipec/iitg_kubernetes:p3_master_image_latest
       # Once the container is started, the following command will be run. Note that all the data moved to the login node home directory will be accessible to the container in the /data/ directory.
-      command: [ "/bin/bash", "/data/what_ever_code_you_want_to_run" ]
+      #command: [ "/bin/bash", "/data/what_ever_code_you_want_to_run" ]
       # For demo, to check working of kubernetes, comment the above command and uncomment the following commands.
-      # command: [ "/bin/sleep", "120" ]
+      command: [ "/bin/sleep", "120" ]
       # The above command will create the container, then run it for 120 seconds and then terminate.
       # If let say, you need to run a bash script, then the command woud be
       # command: [ "/bin/bash", "/data/name_of_script.bash" ]
@@ -33,7 +33,7 @@ spec:
   - name: nfs-data
     hostPath:
       # Replace the USERNAME with your login account name.
-      path: /home/kubernetes/data/USERNAME/
+      path: /home/kubernetes/data/ibisht/
       type: Directory
   # Do not change the below mentioned parameter.
   restartPolicy: Never
