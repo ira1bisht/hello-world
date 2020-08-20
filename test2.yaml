@@ -14,11 +14,11 @@ spec:
       # Name of the docker image you want to run. The Kubernetes will pull the image from docker hub. The following image has tensorflow and some other python tools installed. This image is created using the Dockerfile available at: https://github.com/abhipec/iitg_kubernetes . According to your requirement, create the necessary image. 
       # iitg_kubernetes:p3_master_image_latest is the name of the image where several Machine Learning realted python 3 packages are already installed.
       # iitg_kubernetes:p2_master_image_latest is the name of the image where several Machine Learning related python 2 packages are already installed.
-      image: abhipec/iitg_kubernetes:p3_master_image_latest
+      image: ibisht/create-data:latest
       # Once the container is started, the following command will be run. Note that all the data moved to the login node home directory will be accessible to the container in the /data/ directory.
       #command: [ "/bin/bash", "/data/what_ever_code_you_want_to_run" ]
       # For demo, to check working of kubernetes, comment the above command and uncomment the following commands.
-      command: [ "/bin/sleep", "120" ]
+      #command: [ "/bin/sleep", "120" ]
       # The above command will create the container, then run it for 120 seconds and then terminate.
       # If let say, you need to run a bash script, then the command woud be
       # command: [ "/bin/bash", "/data/name_of_script.bash" ]
