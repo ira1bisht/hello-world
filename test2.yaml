@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   # Change the name according to your need. A good name is descriptive and should tells information about what kind of experiment the pod will be used for. 
-  name: check3
+  name: check4
 spec:
   securityContext:
     # Replace NUMBER with the user id provided by the administrator
@@ -16,7 +16,7 @@ spec:
       # iitg_kubernetes:p2_master_image_latest is the name of the image where several Machine Learning related python 2 packages are already installed.
       image: ibisht/create-data:latest
       # Once the container is started, the following command will be run. Note that all the data moved to the login node home directory will be accessible to the container in the /data/ directory.
-      command: [ "/bin/bash", "/data/DCPDN/create_train.py" ]
+      command: [ "python", "/data/DCPDN/create_train.py" ]
       # For demo, to check working of kubernetes, comment the above command and uncomment the following commands.
       #command: [ "/bin/sleep", "120" ]
       # The above command will create the container, then run it for 120 seconds and then terminate.
