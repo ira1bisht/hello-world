@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   # Change the name according to your need. A good name is descriptive and should tells information about what kind of experiment the pod will be used for. 
-  name: check17
+  name: check18
 spec:
   securityContext:
     # Replace NUMBER with the user id provided by the administrator
@@ -14,7 +14,7 @@ spec:
       # Name of the docker image you want to run. The Kubernetes will pull the image from docker hub. The following image has tensorflow and some other python tools installed. This image is created using the Dockerfile available at: https://github.com/abhipec/iitg_kubernetes . According to your requirement, create the necessary image. 
       # iitg_kubernetes:p3_master_image_latest is the name of the image where several Machine Learning realted python 3 packages are already installed.
       # iitg_kubernetes:p2_master_image_latest is the name of the image where several Machine Learning related python 2 packages are already installed.
-      image: ibisht/newsyn:syn
+      image: ibisht/create-data:latest
       #image: abhipec/iitg_kubernetes:p3_master_image_latest
       # Once the container is started, the following command will be run. Note that all the data moved to the login node home directory will be accessible to the container in the /data/ directory.
       command: [ "python", "/data/DCPDN/create_train.py" ]
